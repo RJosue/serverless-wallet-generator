@@ -1,0 +1,26 @@
+org: rjosue12
+app: serveless-waller-generator
+service: serveless-waller-generator
+frameworkVersion: '3'
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  pkpass:
+    handler: ./routes/index.pkpass
+    events:
+      - httpApi:
+          path: /
+          method: get
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin
+
+custom:
+  serverless-offline:
+      httpPort: 8080

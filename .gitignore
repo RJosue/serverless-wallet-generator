@@ -1,0 +1,18 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.build
+
+#env
+.env
+
+#certificates
+certificates/**
+
+models/**
+
+!.gitkeep
+yarn.lock
